@@ -51,6 +51,24 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+           @Override
+           public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                if(mediaPlayer != null && b){
+                    mediaPlayer.seekTo(i);
+                }
+           }
+
+           @Override
+           public void onStartTrackingTouch(SeekBar seekBar) {
+
+           }
+
+           @Override
+           public void onStopTrackingTouch(SeekBar seekBar) {
+
+           }
+       });
 
         Thread seekbarThread = new SeekbarRunnable();
         seekbarThread.start();
